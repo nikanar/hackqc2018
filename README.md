@@ -1,6 +1,6 @@
 # Potree
 
-## Nous tempérons les îlots de chaleur des grandes villes du Québec en plantant des arbres 🌲
+## Nous tempérons les îlots de chaleur des grandes villes du Québec en plantant des arbres !
 
 ### Nous encourageons la plantation de davantage d'arbres en milieu urbain, pour lutter contre les effets néfastes des îlots de chaleur. Nous rassemblons les opinions des citoyens sur la végétation de leur quartier, et leur permettons de contribuer au recensement des arbres de la municipalité.
 
