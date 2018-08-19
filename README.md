@@ -11,3 +11,36 @@
 [Jeu de données sur les arbres de Repentigny](https://www.donneesquebec.ca/recherche/fr/dataset/vrep-arbres/resource/0ab4da5a-b470-4774-9f2a-4d9bb19763a5#avertissementTelechargement_Arbres)
 
 [Données provinciales sur les îlots de chaleur](https://www.donneesquebec.ca/recherche/fr/dataset/ilots-de-chaleur-fraicheur-urbains-et-temperature-de-surface)
+
+
+## some deploy instructions
+
+https://github.com/ogrergo/hackqc2018
+
+## Tree database (mongoDB)
+### drop
+    mongo
+    > show dbs
+    > use hackqc-2018
+    > db.dropDatabase()
+
+### repopulate
+This takes a couple minutes
+
+    cd data && ./get_data.sh && cd ..
+    python3 init_db.py -c mtl
+    python3 init_db.py -c qc
+    python3 init_db.py -c rep
+    python3 make_exemples.py
+
+
+## Starting the server
+edit `demo/js/bundle.js`, change `SERVER_URL` (around line 38687)
+
+Run with `gunicorn --access-logfile access_log --error-logfile error_log -b 127.0.0.1:5000 app.api:app`
+
+
+### statics
+    cp -r hackqc2018/demo/* /var/www/potree/
+
+To rebuild the `bundle.js` file, run `browserify src/main.js > bundle.js`
